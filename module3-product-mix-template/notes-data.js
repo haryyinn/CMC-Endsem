@@ -652,7 +652,7 @@ window.NOTES_DATA = {
           "Brand activism (Ariel #ShareTheLoad): classic independence marketing — brand cause + unchanged product."
         ]
       }
-    },
+    }
 
   {
     id: "consumer-product-classification",
@@ -779,7 +779,8 @@ window.NOTES_DATA = {
       },
       advancedInsight: "PLC is a strategic planning tool, not a prediction. A product's position on the curve is determined by managerial decisions, not time alone. Repositioning (Maggi), planned obsolescence (Apple), or new market entry (Colgate in rural India) can all shift a product backward on the curve. The most sophisticated use of PLC is cross-referencing it with the competitive lifecycle — when competitors enter Growth, that is the signal to accelerate distribution and brand-building before Maturity sets in.",
       connections: ["Product as Marketing Offering — classification extends the 3-level hierarchy into strategic decisions.", "Promotion & IMC — PLC stage is one of the 6 promotional mix choice factors.", "Marketing Mix Interactions — program-market fit requires knowing where the product is in its lifecycle."]
-    },
+    }
+  },
 
   {
     id: "marketing-mix-interactions",
@@ -904,7 +905,8 @@ window.NOTES_DATA = {
       },
       advancedInsight: "The most powerful application of marketing mix Leverage is when the firm's entire business model becomes the marketing mix. Amazon's logistics infrastructure IS its Place AND its Promotion (Prime membership advertising) AND its Product (next-day delivery as a feature). When the business model and the mix are indistinguishable, replication by competitors becomes structurally impossible — not just strategically difficult.",
       connections: ["Product Mix Dimensions — 4Ps is the meta-context for width/length/depth portfolio decisions.", "Competitive Strategies — Reaction Matrix links to competitive dynamics and game theory.", "Promotion & IMC — Promotion is the 4th P; the 4C equivalent (Communication) implies two-way dialogue."]
-    },
+    }
+  },
   {
     id: "promotion-imc", title: "Promotion & IMC", category: "Promotion & IMC",
     contentType: "core", examPriority: "high", sourceIds: ["slides-imc"], tags: [],
@@ -923,7 +925,8 @@ window.NOTES_DATA = {
       examToolkit: { shortQuestions: [], longQuestions: [], veryLongQuestions: [], caseQuestions: [], commonMistakes: [] },
       quickRevision: { summary: [], keywords: [], examples: [], diagram: "", likelyQuestion: "", commonTrap: "" },
       connections: []
-    },
+    }
+  },
   {
     id: "pricing-strategy", title: "Pricing Strategy", category: "Pricing",
     contentType: "core", examPriority: "high", sourceIds: ["slides-pricing"], tags: [],
@@ -942,7 +945,8 @@ window.NOTES_DATA = {
       examToolkit: { shortQuestions: [], longQuestions: [], veryLongQuestions: [], caseQuestions: [], commonMistakes: [] },
       quickRevision: { summary: [], keywords: [], examples: [], diagram: "", likelyQuestion: "", commonTrap: "" },
       connections: []
-    },
+    }
+  },
   {
     id: "brand-equity", title: "Brand Equity & Branding", category: "Branding",
     contentType: "core", examPriority: "high", sourceIds: ["slides-branding"], tags: [],
@@ -961,7 +965,8 @@ window.NOTES_DATA = {
       examToolkit: { shortQuestions: [], longQuestions: [], veryLongQuestions: [], caseQuestions: [], commonMistakes: [] },
       quickRevision: { summary: [], keywords: [], examples: [], diagram: "", likelyQuestion: "", commonTrap: "" },
       connections: []
-    },
+    }
+  },
   {
     id: "competitive-dynamics", title: "Competitive Market Strategies", category: "Competitive Strategies",
     contentType: "core", examPriority: "high", sourceIds: ["slides-competitive"], tags: [],
@@ -980,7 +985,8 @@ window.NOTES_DATA = {
       examToolkit: { shortQuestions: [], longQuestions: [], veryLongQuestions: [], caseQuestions: [], commonMistakes: [] },
       quickRevision: { summary: [], keywords: [], examples: [], diagram: "", likelyQuestion: "", commonTrap: "" },
       connections: []
-    },
+    }
+  },
   {
     id: "case-analysis", title: "Cases & Analytical Frameworks", category: "Cases",
     contentType: "core", examPriority: "high", sourceIds: ["course-outline"], tags: [],
@@ -1000,5 +1006,6 @@ window.NOTES_DATA = {
       quickRevision: { summary: [], keywords: [], examples: [], diagram: "", likelyQuestion: "", commonTrap: "" },
       connections: []
     }
-  ]
+  }
+]
 };
