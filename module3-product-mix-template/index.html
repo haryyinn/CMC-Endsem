@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 3: Product Mix — CMC Notes</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <div class="fatal" id="fatal" hidden>
+    <strong>Template could not start.</strong>
+    <span id="fatalMessage">Open the browser console for details.</span>
+  </div>
+
+  <!-- STICKY TOPBAR -->
+  <header class="topbar">
+    <div class="topbar__brand">
+      <div class="topbar__logo">M3</div>
+      <div>
+        <div class="topbar__title" id="appTitle">Module 3: Product Mix</div>
+        <div class="topbar__sub" id="courseLabel">IIM Kozhikode · BMS</div>
+      </div>
+    </div>
+    <div class="topbar__center">
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.8"/><line x1="12.5" y1="12.5" x2="17" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input id="searchInput" class="topbar__search" type="search" placeholder="Search anything — concept, case, keyword, framework…" autocomplete="off" spellcheck="false" />
+        <button id="searchClear" class="search-clear" type="button" aria-label="Clear search" hidden>&times;</button>
+      </div>
+    </div>
+    <div class="topbar__right">
+      <span class="topbar__stat"><strong id="statConcepts">0</strong> concepts</span>
+      <span class="topbar__stat"><strong id="statSources">0</strong> sources</span>
+      <span class="topbar__stat"><strong id="statFlashcards">0</strong> cards</span>
+    </div>
+  </header>
+
+  <!-- LAYOUT -->
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__label">MODULES</div>
+      <nav id="chapterNav" class="chapter-nav" aria-label="Module chapters"></nav>
+
+      <div class="sidebar__label sidebar__label--gap">STUDY TOOLS</div>
+      <div class="tool-nav">
+        <button class="tool-item" data-section="flashcards" type="button">&#9654; Flashcards</button>
+        <button class="tool-item" data-section="exam-bank" type="button">&#9998; Exam Bank</button>
+        <button class="tool-item" data-section="source-map" type="button">&#128196; Source Map</button>
+        <button class="tool-item" data-section="checklist" type="button">&#10003; Syllabus Check</button>
+      </div>
+
+      <div class="sidebar__label sidebar__label--gap">VIEW</div>
+      <div class="view-controls">
+        <button class="view-btn" id="expandAll" type="button">Expand all</button>
+        <button class="view-btn" id="collapseAll" type="button">Collapse all</button>
+        <button class="view-btn" id="revisionMode" type="button">Revision mode</button>
+        <button class="view-btn" id="largeText" type="button">Large text</button>
+        <button class="view-btn" id="focusMode" type="button">Focus</button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main" id="mainContent">
+
+      <!-- CONCEPTS VIEW (default) -->
+      <div id="view-concepts" class="view active">
+        <div id="chapterHeader" class="chapter-header" hidden></div>
+        <div class="result-bar">
+          <span id="resultLine">Loading…</span>
+          <div class="result-filters">
+            <select id="categoryFilter" class="filter-sel" aria-label="Filter by category"><option value="all">All categories</option></select>
+            <select id="priorityFilter" class="filter-sel" aria-label="Filter by priority">
+              <option value="all">All priorities</option>
+              <option value="High">High priority</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+        </div>
+        <div id="conceptCards" class="conceptCards"></div>
+      </div>
+
+      <!-- FLASHCARDS VIEW -->
+      <div id="view-flashcards" class="view hidden">
+        <div class="view-head">
+          <h2>Flashcards</h2>
+          <p id="appSubtitle">Active recall — definitions, traps, frameworks, and exam hooks.</p>
+        </div>
+        <div class="flashShell">
+          <button id="prevFlashcard" type="button">&#8592;</button>
+          <div class="flashcard" id="flashcard" role="button" tabindex="0">
+            <div class="flash-counter" id="flashCounter">1 / 1</div>
+            <div class="flashTerm" id="flashTerm">No flashcards</div>
+            <div class="flashAnswer" id="flashAnswer">Add data to notes-data.js</div>
+          </div>
+          <button id="nextFlashcard" type="button">&#8594;</button>
+        </div>
+        <div class="centerActions">
+          <button id="shuffleFlashcard" type="button">Shuffle</button>
+          <button id="toggleFlashcard" type="button">Reveal / hide answer</button>
+        </div>
+      </div>
+
+      <!-- EXAM BANK VIEW -->
+      <div id="view-exam-bank" class="view hidden">
+        <div class="view-head">
+          <h2>Exam Bank</h2>
+          <p>All question types — pulled from concept data automatically.</p>
+        </div>
+        <div class="exam-tab-bar" id="examTabBar">
+          <button class="exam-tab active" data-tab="mcq" type="button">MCQ</button>
+          <button class="exam-tab" data-tab="short" type="button">Short Answer</button>
+          <button class="exam-tab" data-tab="long" type="button">Long Answer</button>
+          <button class="exam-tab" data-tab="verylong" type="button">Very Long</button>
+          <button class="exam-tab" data-tab="case" type="button">Case Questions</button>
+        </div>
+        <div id="examBank" class="exam-bank-body"></div>
+      </div>
+
+      <!-- SOURCE MAP VIEW -->
+      <div id="view-source-map" class="view hidden">
+        <div class="view-head">
+          <h2>Source Map</h2>
+          <p id="sourcePolicy">Every document mapped to Module 3 topics.</p>
+        </div>
+        <div id="sourceMapTable" class="tableWrap"></div>
+      </div>
+
+      <!-- CHECKLIST VIEW -->
+      <div id="view-checklist" class="view hidden">
+        <div class="view-head">
+          <h2>Syllabus Coverage Checklist</h2>
+          <p>Spot missing, partial, or supplementary topics before final revision.</p>
+        </div>
+        <div id="checklist" class="checklist"></div>
+      </div>
+
+
+    </main>
+  </div>
+
+  <script src="./notes-data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
